@@ -11,7 +11,12 @@ Lista IPs recibidas de:
 
 ● https://www.bigdatacloud.com/insights/tor-exit-nodes
 ### [POST] /exclusion
-Endpoint POST para cargar IP a excluir
+Endpoint POST para cargar IP a excluir 
+
+(Ejemplo de como enviarlo vía Postman:
+
+https://user-images.githubusercontent.com/79547083/144382814-8c7300fb-cb26-4209-b14e-2a4e94acc52e.png)
+
 ### [GET] /customlist
 Lista sin IPs excluidas
 
@@ -25,3 +30,6 @@ Lista sin IPs excluidas
 **Container** - **Docker**
 
 **Cloud** - **AWS**
+Acceder vía:
+
+http://ec2-3-144-100-125.us-east-2.compute.amazonaws.com:5000/
