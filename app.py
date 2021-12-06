@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request
 import traceback
-import requests
 import json
 from pymongo import MongoClient
 
@@ -26,19 +25,10 @@ def endpoints():
 
 @app.route("/list")
 def index():
-    url_data_bdc = requests.get("https://api.bigdatacloud.net/data/tor-exit-nodes-list?batchSize=1000&offset=0&localityLanguage=es&key=84a06ef229604e3dbd785fa60b407788")
-    if url_data_bdc.status_code != 200:
-        return "Conexión Fallida"
-    else:
-        data_bdc = json.loads(url_data_bdc.content)
-        for i in data_bdc["nodes"]: 
-            i["exclusion"] = False #Agrega una nueva key llamada exclusion con value False a todo el json recibido del request
-        ip_list_bdc = []
-        for datos in data_bdc["nodes"]:
-            ip_list_bdc.append(datos['ip'])
-        ip_json = json.dumps(ip_list_bdc, sort_keys=True, indent=4)
-        mycol_full.insert_many(data_bdc["nodes"]) #Inserta el json modificado con la nueva key a nuestra db
-        return ip_json
+    x = []
+    for i in mycol_full.find():
+        x.append(i['ip'])
+    return json.dumps({"ips":x}) 
 
 
 @app.route("/exclusion", methods = ['POST'])
@@ -61,10 +51,5 @@ def customlist():
     
     
 if __name__ == "__main__":
-    app.run(debug=True
+    app.run(debug=True, port=5000, host="0.0.0.0"
     )
-
-
-
-
-# https://www.dan.me.uk/torlist/?exit
