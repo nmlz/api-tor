@@ -32,4 +32,4 @@ Lista sin IPs excluidas
 **Cloud** - **AWS**
 Acceder vía:
 
-http://ec2-3-144-100-125.us-east-2.compute.amazonaws.com:5000/
+http://ec2-3-142-114-40.us-east-2.compute.amazonaws.com:5000/
