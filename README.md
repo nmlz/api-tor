@@ -33,3 +33,5 @@ Lista sin IPs excluidas
 Acceder vía:
 
 http://ec2-3-142-114-40.us-east-2.compute.amazonaws.com:5000/
+
+**main.py es la Lambda function**
