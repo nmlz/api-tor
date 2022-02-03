@@ -1,5 +1,5 @@
-# Caso TOR
-Challenge Seguridad MeLi - API Rest
+# TOR
+API Rest
 
 ## Endpoints
 ### [GET] /
@@ -32,6 +32,6 @@ Lista sin IPs excluidas
 **Cloud** - **AWS**
 Acceder vía:
 
-http://ec2-3-142-114-40.us-east-2.compute.amazonaws.com:5000/
+http://ec2-3-142-114-40.us-east-2.compute.amazonaws.com:5000/ NO LEVANTADO ACTUALMENTE
 
 **main.py es la Lambda function**
